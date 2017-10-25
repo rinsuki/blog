@@ -1,7 +1,11 @@
 language: node_js
 node_js: node
 script:
-  - openssl aes-256-cbc -K $encrypted_4d3e976819ff_key -iv $encrypted_4d3e976819ff_iv -in id_rsa.enc -out .ci-files/id_rsa -d
-  - mv .ci-files/id_rsa ~/.ssh/
-  - chmod 600 ~/.ssh/id_rsa
-  - hexo deploy
+  - hexo generate
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: gh-pages
+  local_dir: public/
