@@ -3,7 +3,7 @@ for post in (page.posts || {data: [page]}).data
         .panel-body
             h2.title: a.title(href=url_for(post.link || post.path))= post.title
             small
-                i.fa.fa-calendar-o
+                span.glyphicon.glyphicon-time
                 |  投稿: #{post.date.format('YYYY/MM/DD hh:mm:ss')}
             br
             br
