@@ -8,6 +8,14 @@ article h2.title {
 .pagination_wrapper {
     text-align: center;
 }
+img {
+    max-width: 100%;
+}
+
+.container article {
+    margin-left: -16px;
+    margin-right: -16px;
+}
 
 /* 目指せ、トップアイドル! */
 .navbar .container{
