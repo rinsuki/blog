@@ -8,3 +8,41 @@ article h2.title {
 .pagination_wrapper {
     text-align: center;
 }
+
+/* 目指せ、トップアイドル! */
+.navbar .container{
+    height:30vw;
+    min-height:120px;
+    max-height:240px;
+    max-width:1000px;
+    position:relative;
+}
+.navbar {
+    z-index:0;
+}
+.navbar .container .gray-filter {
+    background: black;
+    background: url(shibuyarin/2017/10-halloweencode/0.png) no-repeat;
+    background-position: center 25%;
+    opacity:0.5;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:-1;
+    background-size: cover;
+}
+.navbar .container>*:not(.gray-filter) {
+    z-index:2;
+}
+.navbar-hidarisita{
+    position:absolute;
+    left:15px;
+    top:76px;
+    color:#eee;
+    font-size:80%;
+}
+body{
+    z-index:-999;
+}
