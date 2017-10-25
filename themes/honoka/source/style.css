@@ -1,0 +1,10 @@
+article h2.title a{
+    color: #333;
+    text-decoration: none;
+}
+article h2.title {
+    margin: 3px 0;
+}
+.pagination_wrapper {
+    text-align: center;
+}

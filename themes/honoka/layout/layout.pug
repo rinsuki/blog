@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        link(rel="stylesheet", href="https://cdn.honokak.osaka/honoka/3.3.7-a/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        != css("style.css")
+    body
+        nav.navbar.navbar-default
+            .container
+                a.navbar-brand(href=url_for())= config.title
+        .container
+            != body

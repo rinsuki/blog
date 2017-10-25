@@ -1,0 +1,32 @@
+for post in (page.posts || {data: [page]}).data
+    article.panel.panel-default
+        .panel-body
+            h2.title: a.title(href=url_for(post.link || post.path))= post.title
+            small
+                i.fa.fa-calendar-o
+                |  投稿: #{post.date.format('YYYY/MM/DD hh:mm:ss')}
+            br
+            br
+            != post.content
+if page.total
+    .pagination_wrapper
+        nav
+            mixin pager_content(href, disabled, active)
+                li(class={disabled, active}): a(href=(disabled || active) ? undefined : url_for(href))
+                    block
+            ul.pagination
+                - var base_url = page.current_url.replace("page/"+page.current+"/", "")
+                != base_url
+                +pager_content(base_url, page.current === 1)= "<<"
+                +pager_content(page.prev_link, page.current === 1)= "<"
+                - var n = 1
+                while n < page.current
+                    +pager_content((n == 1) ? base_url : base_url+"page/"+n+"/")= n
+                    - n++
+                +pager_content(page.current_url, false, true)= page.current
+                - n++
+                while n <= page.total
+                    +pager_content((n == 1) ? base_url : base_url+"page/"+n+"/")= n
+                    - n++
+                +pager_content(page.next_link, page.total === page.current)= ">"
+                +pager_content(base_url+"page/"+page.total+"/", page.total === page.current)= ">>"
