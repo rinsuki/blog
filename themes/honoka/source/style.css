@@ -17,6 +17,10 @@ img {
     margin-right: -16px;
 }
 
+li {
+    margin-top: 0.5em;
+}
+
 /* 目指せ、トップアイドル! */
 .navbar .container{
     height:30vw;
