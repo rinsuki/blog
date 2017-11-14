@@ -18,7 +18,7 @@ addEventListener("DOMContentLoaded", function() {
     }
     var gachaResult = gacha()
     var style = document.createElement("style")
-    style.innerText = ".navbar .container .gray-filter {background-image: url("+base_url+gachaResult+".png);}"
+    style.innerText = ".navbar .container .gray-filter {background-image: url("+base_url+gachaResult+".jpg);}"
     document.head.appendChild(style)
     setTimeout(function() {
         var userAgent = navigator.userAgent.toLowerCase();
@@ -27,7 +27,7 @@ addEventListener("DOMContentLoaded", function() {
             if (i >= count) return
             if (i == gachaResult) return loadImg(i+1)
             var img = new Image()
-            img.src = base_url+i+".png"
+            img.src = base_url+i+".jpg"
             img.onload = function(){
                 setTimeout(function() {
                     loadImg(i+1)
