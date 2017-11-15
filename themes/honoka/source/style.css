@@ -58,3 +58,7 @@ li {
 body{
     z-index:-999;
 }
+.share-buttons .btn{
+    display: inline-block;
+    margin-right: 1em;
+}

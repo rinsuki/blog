@@ -8,6 +8,12 @@ for post in (page.posts || {data: [page]}).data
             br
             br
             != post.content
+            hr
+            h2 共有
+            .share-buttons
+                a.btn.btn-primary(target="_blank", href="https://twitter.com/intent/tweet?text="+encodeURIComponent(post.title+' - '+config.title)+"&via=428rinsuki&url="+encodeURIComponent(config.url+url_for(post.link || post.path))) Twitter
+                a.btn.btn-primary(target="_blank", href="https://sharedon.rinsuki.tk/share/?text="+encodeURIComponent(post.title+' - '+config.title+"\n"+config.url+url_for(post.link || post.path))) Mastodon
+                a.btn.btn-primary(target="_blank", href="http://b.hatena.ne.jp/add?mode=confirm&url="+encodeURIComponent(config.url+url_for(post.link || post.path)),onclick="open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=480,width=512');return false") はてなブックマーク
 if page.total
     .pagination_wrapper
         nav
