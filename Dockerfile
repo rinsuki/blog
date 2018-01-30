@@ -2,10 +2,10 @@ FROM node:9 AS build
 
 WORKDIR /app
 
-COPY package.json package-lock.json /app
+COPY package.json package-lock.json /app/
 RUN npm install
 
-COPY . /app
+COPY . /app/
 RUN hexo generate
 
 FROM nginx
