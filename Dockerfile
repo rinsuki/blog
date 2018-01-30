@@ -6,7 +6,7 @@ COPY package.json package-lock.json /app/
 RUN npm install
 
 COPY . /app/
-RUN hexo generate
+RUN $(npm bin)/hexo generate
 
 FROM nginx
 
