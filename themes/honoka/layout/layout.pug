@@ -7,7 +7,8 @@ html
         link(rel="stylesheet", href="https://cdn.honokak.osaka/honoka/3.3.7-a/css/bootstrap.min.css")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/javascript.min.js")
+        for name in theme.highlight_languages
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/"+name+".min.js")
         link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css")
         != css("style.css")
         != js("gacha.js")
