@@ -22,7 +22,6 @@ if page.total
                     block
             ul.pagination
                 - var base_url = page.current_url.replace("page/"+page.current+"/", "")
-                != base_url
                 +pager_content(base_url, page.current === 1)= "<<"
                 +pager_content(page.prev_link, page.current === 1)= "<"
                 - var n = 1
