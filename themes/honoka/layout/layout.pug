@@ -13,15 +13,20 @@ html
         != css("style.css")
         != js("gacha.js")
         != js("script.js")
+        link(rel="alternate", type="application/atom+xml", href=url_for("feed.xml"), title=config.title)
         if page.title
             title #{page.title} - #{config.title}
         else
             title #{config.title}
     body
-        nav.navbar.navbar-inverse
+        header.top
             .container
                 .gray-filter
-                .navbar-header
-                    a.navbar-brand(href=url_for())= config.title
+                .contents
+                    .top
+                        a(href=url_for())= config.title
+                    .bottom
+                        a(href=url_for('feed.xml')) RSS
+                        a(href="https://rinsuki.net") rinsuki.net
         .container
             != body

@@ -21,8 +21,10 @@ li
     margin-top: 0.5em
 
 // 目指せ、トップアイドル!
-.navbar
+header.top
+    background: #222
     z-index: 0
+    margin-bottom: 2em
     .container
         height: 30vw
         min-height: 120px
@@ -39,10 +41,24 @@ li
             bottom:0
             left:0
             right:0
-            z-index:-1
             background-size: cover
-        *:not(.gray-filter)
-            z-index: 2
+        .contents
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            font-size: 20px
+            a
+                display: inline-block
+                color: #eee
+                padding: 1em
+                padding-right: 0
+            .bottom
+                position: absolute
+                bottom: 0
+                opacity: 0.9
+                font-size: 90%
 
 .navbar-hidarisita
     position:absolute
