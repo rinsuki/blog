@@ -2,11 +2,11 @@ FROM node:9 AS build
 
 WORKDIR /app
 
-COPY package.json package-lock.json /app/
-RUN npm install
+COPY package.json yarn.lock /app/
+RUN yarn install --pure-lockfile
 
 COPY . /app/
-RUN $(npm bin)/hexo generate
+RUN yarn run hexo generate
 
 FROM nginx
 
