@@ -14,4 +14,4 @@ tags:
 
 ## ←こんなかんじ
 
-ご意見あったら Mastodon @rinsuki@mstdn.maud.io か Twitter @428rinsuki までください。
+ご意見あったら Mastodon [@rinsuki@mstdn.maud.io](https://mstdn.maud.io/@rinsuki) か Twitter [@428rinsuki](https://twitter.com/428rinsuki) までください。
