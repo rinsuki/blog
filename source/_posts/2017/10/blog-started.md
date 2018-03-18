@@ -5,6 +5,9 @@ tags:
 ---
 
 タイトル通り。
+
+<!-- more -->
+
 テーマは [じゅりあん(@MITLicense@twitter.com)](https://twitter.com/MITLicense) さんが作っている [Honoka](http://honokak.osaka) というbootstrapテーマを使いました。
 Hexo + GitHub Pagesで運用しているので、[GitHubリポジトリ](https://github.com/rinsuki/blog) でソースコードが見れます。
 

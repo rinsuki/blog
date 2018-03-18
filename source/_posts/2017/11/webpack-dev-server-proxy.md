@@ -8,7 +8,9 @@ tags:
 
 productionが`https://app.example.com`で、ここでバックエンドのアプリケーションもwebpackのbundle.jsも一緒に配信する
 
-developmentでもwebpack-dev-serverさえ使わなければ同じポートにできるけど、webpack-dev-serverのauto reloadとか使いたいよね
+developmentでもwebpack-dev-serverさえ使わなければ同じポートにできるけど、webpack-dev-serverのauto reloadとか使いたいよねというお話
+
+<!-- more -->
 
 ## やりかた
 
