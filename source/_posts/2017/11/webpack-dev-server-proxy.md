@@ -4,13 +4,13 @@ date: 2017-11-08 18:33:14
 tags:
 ---
 
-# 前提
+## 前提
 
 productionが`https://app.example.com`で、ここでバックエンドのアプリケーションもwebpackのbundle.jsも一緒に配信する
 
 developmentでもwebpack-dev-serverさえ使わなければ同じポートにできるけど、webpack-dev-serverのauto reloadとか使いたいよね
 
-# やりかた
+## やりかた
 
 `webpack.config.js`にこう書く
 
