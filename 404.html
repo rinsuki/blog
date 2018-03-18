@@ -1,7 +1,10 @@
 <h1>移行しました</h1>
-移行先 → <a href="https://blog.rinsuki.tk">https://blog.rinsuki.tk</a>
+移行先 → <a href="https://blog.rinsuki.net">https://blog.rinsuki.net</a>
 <script>
     if(location.hostname == "rinsuki.github.io" && location.pathname.startsWith("/blog")) {
         location.href = location.href.replace("rinsuki.github.io/blog", "blog.rinsuki.tk")
+    }
+    if(location.hostname == "rinsuki.net" && location.pathname.startsWith("/blog")) {
+        location.href = location.href.replace("rinsuki.net/blog", "blog.rinsuki.tk")
     }
 </script>
