@@ -1,0 +1,73 @@
+article .title
+    margin 3px 0
+    a
+        color #333
+        text-decoration none
+    
+.pagination_wrapper
+    text-align: center
+
+img
+    max-width: 100%
+
+.container article
+    margin-left: -16px
+    margin-right: -16px
+
+li
+    margin-top: 0.5em
+
+// 目指せ、トップアイドル!
+.navbar
+    z-index: 0
+    .container
+        height: 30vw
+        min-height: 120px
+        max-height: 240px
+        max-width: 1000px
+        position: relative
+        .gray-filter
+            background: black
+            background: url(shibuyarin/2017/10-halloweencode/0.png) no-repeat
+            background-position: center 25%
+            opacity:0.5
+            position:absolute
+            top:0
+            bottom:0
+            left:0
+            right:0
+            z-index:-1
+            background-size: cover
+        *:not(.gray-filter)
+            z-index: 2
+
+.navbar-hidarisita
+    position:absolute
+    left:15px
+    top:76px
+    color:#eee
+    font-size:80%
+
+body
+    z-index:-999
+
+.share-buttons .btn
+    display: inline-block
+    margin-right: 1em
+
+h1, h2, h3
+    &::before
+        display: block
+        float: left
+        width: 10rem
+        text-align: right
+        padding-right: 3rem
+        margin-left: -10rem
+        user-select: none
+
+h1::before
+    content: "#"
+h2::before
+    content: "##"
+h3::before
+    content: "###"

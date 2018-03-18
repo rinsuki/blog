@@ -1,7 +1,7 @@
 for post in (page.posts || {data: [page]}).data
     article.panel.panel-default
         .panel-body
-            h2.title: a.title(href=url_for(post.link || post.path))= post.title
+            h1.title: a.title(href=url_for(post.link || post.path))= post.title
             small
                 span.glyphicon.glyphicon-time
                 |  投稿: #{post.date.format('YYYY/MM/DD hh:mm:ss')}
