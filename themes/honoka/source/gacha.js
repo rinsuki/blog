@@ -18,25 +18,6 @@ addEventListener("DOMContentLoaded", function() {
     }
     var gachaResult = gacha()
     var style = document.createElement("style")
-    style.innerText = ".navbar .container .gray-filter {background-image: url("+base_url+gachaResult+".jpg);}"
+    style.innerText = "html body header #gray-filter {background-image: url("+base_url+gachaResult+".jpg);}"
     document.head.appendChild(style)
-    setTimeout(function() {
-        var userAgent = navigator.userAgent.toLowerCase();
-        if(~userAgent.indexOf("iphone") || ~userAgent.indexOf("android") || ~userAgent.indexOf("mobile") || ~userAgent.indexOf("phone")) return
-        function loadImg(i) {
-            if (i >= count) {
-                localStorage.setItem("cache-image", base_url)
-                return
-            }
-            if (i == gachaResult) return loadImg(i+1)
-            var img = new Image()
-            img.src = base_url+i+".jpg"
-            img.onload = function(){
-                setTimeout(function() {
-                    loadImg(i+1)
-                }, 1000)
-            }
-        }
-        if(localStorage.getItem("cache-image") != base_url) loadImg(0)
-    }, 1000)
 })
