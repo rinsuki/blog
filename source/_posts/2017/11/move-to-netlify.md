@@ -2,6 +2,7 @@
 title: GitHub Pagesからnetlify + 独自ドメイン運用に変えた
 date: 2017-11-14 17:14:07
 tags:
+  - info
 ---
 
 タイトル通り。リポジトリは変わらず <https://github.com/rinsuki/blog>。

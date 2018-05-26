@@ -2,6 +2,7 @@
 title: NTTがついにブロッキングを表明したので、自前でDNSフルリゾルバを立ててみる
 date: 2018-04-23 15:27:17
 tags:
+  - dns
 ---
 
 [ニュース 2018年4月23日:インターネット上の海賊版サイトに対するブロッキングの実施について | NTT Com 企業情報 | NTTコミュニケーションズ 企業情報](https://www.ntt.com/about-us/press-releases/news/article/2018/0423.html)

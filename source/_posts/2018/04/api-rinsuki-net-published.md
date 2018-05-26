@@ -2,6 +2,8 @@
 title: api.rinsuki.netを公開しました
 date: 2018-04-10 16:33:29
 tags:
+  - info
+  - api.rinsuki.net
 ---
 
 api.rinsuki.net を公開しました。現時点で公開しているのはTwitterのSN/IDからアイコンにリダイレクトするサービスのみです。

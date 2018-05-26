@@ -2,7 +2,8 @@
 title: スマホをiPhone 8にしていたので感想とか
 date: 2018-05-05 00:21:07
 tags:
-    - smartphone
+  - review
+  - smartphone
 ---
 
 題名通り。ちなみに5sからの移行。

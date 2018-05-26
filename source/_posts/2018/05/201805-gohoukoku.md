@@ -1,8 +1,13 @@
 ---
 title: ご報告 (2018/05)
 date: 2018-05-26 18:44:55
-tags: cinderella-girls
+tags: 
+    - idolmaster
+    - cinderella-girls
+    - starlight-stage
 ---
+
+はい
 
 <!-- more -->
 

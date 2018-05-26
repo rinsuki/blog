@@ -2,6 +2,7 @@
 title: Firefox QuantumがリリースされたのでChrome Canaryから移行してみる話
 date: 2017-11-15 00:21:56
 tags:
+  - browser
 ---
 
 タイトル通り。

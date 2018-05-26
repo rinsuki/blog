@@ -2,11 +2,17 @@
 article.panel.panel-default
     .panel-body
         h1.title: a.title(href=url_for(post.link || post.path))= post.title
-        small
-            span.glyphicon.glyphicon-time
-            |  投稿: #{post.date.format('YYYY/MM/DD hh:mm:ss')}
-        br
-        br
+        small.article-meta
+            span
+                span.glyphicon.glyphicon-time
+                | 投稿: #{post.date.format('YYYY/MM/DD hh:mm:ss')}
+            if post.tags.length
+                span
+                    span.glyphicon.glyphicon-tags
+                    | タグ: 
+                    each tag in post.tags.map(a => a)
+                        a.article-tags(href=tag.permalink) #{tag.name}
+                        span.article-tags-after
         != post.content
         hr
         h2 共有
