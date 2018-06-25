@@ -15,6 +15,15 @@ html
         script(src="https://s.hatena.ne.jp/js/HatenaStar.js")
         script(type="text/javascript").
             Hatena.Star.Token = 'd083483b5ee86432a32535686363f06d989e2651';
+            Hatena.Star.Config = {
+                entryNodes: {
+                    "article": {
+                        uri: "h1 a",
+                        title: "h1",
+                        container: "h1",
+                    }
+                }
+            }
         != css("style.css")
         != js("gacha.js")
         != js("script.js")
