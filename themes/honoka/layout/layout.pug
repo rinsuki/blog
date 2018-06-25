@@ -12,6 +12,9 @@ html
         for name in theme.highlight_languages
             script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/"+name+".min.js")
         link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css")
+        script(src="https://s.hatena.ne.jp/js/HatenaStar.js")
+        script.
+            Hatena.Star.Token="d083483b5ee86432a32535686363f06d989e2651"
         != css("style.css")
         != js("gacha.js")
         != js("script.js")
