@@ -26,4 +26,4 @@ tags:
 ```
 chrome://flags#account-consistency
 ``` 
-を開き、DefaultからDisabledにします。変更すると画面下にRELAUNCH NOWというボタンが出てくるので、そこをクリックしたあと、google.com上でログアウトしたあと、好きな順番でログインし直せば完了です。
+を開き、DefaultからDisabledにします。変更すると画面下にRELAUNCH NOWというボタンが出てくるので、そこをクリックしたあと、google.com上でログアウトし、好きな順番でログインし直せば完了です。
