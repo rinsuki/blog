@@ -2,6 +2,9 @@
 title: AndApp(macOS)版モバマスのやたらと太いフォントをどうにかする
 date: 2018-10-05 23:27:25
 tags:
+    - idolmaster
+    - cinderella-girls
+    - mobamas
 ---
 
 タイトル通り。
