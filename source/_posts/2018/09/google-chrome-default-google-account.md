@@ -31,6 +31,6 @@ chrome://flags#account-consistency
 を開き、Defaultから
 
 - Chrome 69の場合: Disabled
-- Chrome 70以降の場合: Enabled Dice(fix auth errors)
+- Chrome 70以降の場合: Enabled Dice (fix auth errors)
 
 にします。変更すると画面下にRELAUNCH NOWというボタンが出てくるので、そこをクリックしたあと、google.com上でログアウトし、好きな順番でログインし直せば完了です。
