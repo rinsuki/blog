@@ -6,7 +6,7 @@ article.panel.panel-default
             span
                 span.glyphicon.glyphicon-time
                 | 投稿: #{post.date.format('YYYY/MM/DD hh:mm:ss')}
-            if post.tags.length
+            if post.tags && post.tags.length
                 span
                     span.glyphicon.glyphicon-tags
                     | タグ: 
