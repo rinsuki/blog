@@ -3,15 +3,17 @@ html
     head
         meta(charset="UTF-8")
         meta(name="viewport",content="width=device-width")
-        meta(name="base-url",content=url_for())
-        link(rel="author", href="https://rinsuki.net/")
-        link(rel="author", href="http://www.hatena.ne.jp/rinsuki/")
+        //- とりあえずリソースを優先的に読み込ませる
+        //- OGPとかは後にしてもよい
         link(rel="stylesheet", href="https://cdn.honokak.osaka/honoka/3.3.7-a/css/bootstrap.min.css")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
-        for name in theme.highlight_languages
-            script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/"+name+".min.js")
         link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css")
+        link(rel="stylesheet", href="/static/style.css")
+
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js")
+        //- あとでこれをビルド時に静的にやる
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js")
+        //- for name in theme.highlight_languages
+        //-     script(src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/"+name+".min.js")
         script(src="https://s.hatena.ne.jp/js/HatenaStar.js")
         script(type="text/javascript").
             Hatena.Star.Token = 'd083483b5ee86432a32535686363f06d989e2651';
@@ -24,26 +26,25 @@ html
                     }
                 }
             }
-        != css("style.css")
-        != js("gacha.js")
-        != js("script.js")
-        link(rel="alternate", type="application/atom+xml", href=url_for("feed.xml"), title=config.title)
-        if page.title
-            title #{page.title} - #{config.title}
-        else
-            title #{config.title}
+        script(src="/static/gacha.js")
+        script(src="/static/script.js")
+        //- メタ情報
+        link(rel="author", href="https://rinsuki.net/")
+        link(rel="author", href="http://www.hatena.ne.jp/rinsuki/")
+        link(rel="alternate", type="application/atom+xml", href="/feed.xml", title="rinsuki's blog")
+        block head
     body
         header.top
             .container
                 .gray-filter#gray-filter
                 .contents
                     .top
-                        a(href=url_for())= config.title
+                        a(href="/") rinsuki's blog
                     .bottom
-                        a(href=url_for('feed.xml')) RSS
+                        a(href="/feed.xml") RSS
                         a(href="https://rinsuki.net") rinsuki.net
         .container
-            != body
+            block body
         .container
             p このブログについてのお問い合わせ先:&nbsp;
                 a(href="https://twitter.com/428rinsuki") Twitter @428rinsukiのDM

@@ -1,0 +1,24 @@
+extends ./layout
+
+block body
+    article.panel.panel-default
+        .panel-body
+            h1.title: a.title(href=post.path)= post.name
+            small.article-meta
+                span
+                    span.glyphicon.glyphicon-time
+                    | 投稿: #{post.created_at}
+                if post.tags.length
+                    span
+                        span.glyphicon.glyphicon-tags
+                        | タグ: 
+                        each tag in post.tags
+                            a.article-tags(href="/tags/" + tag) #{tag}
+                            span.article-tags-after
+            != post.body_html
+            hr
+            h2 共有
+            .share-buttons
+                a.btn.btn-primary(target="_blank", href="https://twitter.com/intent/tweet?text="+encodeURIComponent(post.title+' - blog.rinsuki.net')+"&via=428rinsuki&url="+encodeURIComponent("https://blog.rinsuki.net" + post.path)) Twitter
+                a.btn.btn-primary(target="_blank", href="https://sharedon.static.rinsuki.net/share/?text="+encodeURIComponent(post.title+' - blog.rinsuki.net\n'+"https://blog.rinsuki.net" + post.path)) Mastodon
+                a.btn.btn-primary(target="_blank", href="http://b.hatena.ne.jp/add?mode=confirm&url="+encodeURIComponent("https://blog.rinsuki.net" + post.path),onclick="open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=480,width=512');return false") はてなブックマーク
