@@ -1,10 +1,11 @@
 import jsdom from "jsdom"
 import { esa, ESA_CATEGORY } from "../config";
 
-const RE_CREATED_AT=/(\d+)\/(\d+)\/(\d+)$/.compile();
+const RE_CREATED_AT=/(\d+)\/(\d+)\/(\d+)$/
 
 export type EsaPostFiltered = EsaPost & {
     created_at: string;
+    created_at_sort: number;
     slug: string;
     path: string;
     excerpt?: string;
@@ -30,12 +31,13 @@ function postsFilter(posts: EsaPost[]): EsaPostFiltered[] {
             ...post,
             body_html,
             created_at: r[0],
+            created_at_sort: new Date(r[0]).getTime(),
             slug,
             path: "/articles/" + slug + "/",
             excerpt,
-        })
+        } as EsaPostFiltered)
     }
-    return retPosts
+    return retPosts.sort((a, b) => b.created_at_sort - a.created_at_sort)
 }
 
 export async function fetchEsaPosts() {
