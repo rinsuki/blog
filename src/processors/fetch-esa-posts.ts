@@ -7,6 +7,7 @@ export type EsaPostFiltered = EsaPost & {
     created_at: string;
     slug: string;
     path: string;
+    excerpt?: string;
 }
 
 function postsFilter(posts: EsaPost[]): EsaPostFiltered[] {
@@ -15,14 +16,23 @@ function postsFilter(posts: EsaPost[]): EsaPostFiltered[] {
         console.log(post.category)
         const r = RE_CREATED_AT.exec(post.category)
         if (r == null) continue
-        const document = new jsdom.JSDOM(post.body_md).window.document
-        const originalId = document.querySelector("meta[name='original-id']") as HTMLMetaElement | null
+        const document = new jsdom.JSDOM(post.body_html).window.document
+        document.body.querySelectorAll("[data-sourcepos]").forEach(e => {
+            delete (e as HTMLElement).dataset.sourcepos
+        })
+        const body_html = document.body.innerHTML
+
+        const originalId = new jsdom.JSDOM(post.body_md).window.document.querySelector("meta[name='original-id']") as HTMLMetaElement | null
         const slug = (originalId != null ? originalId.content : post.number).toString()
+        const excerpt = body_html.includes("<!-- more -->") ? body_html.slice(0, body_html.indexOf("<!-- more -->")) : undefined
+
         retPosts.push({
             ...post,
+            body_html,
             created_at: r[0],
             slug,
             path: "/articles/" + slug + "/",
+            excerpt,
         })
     }
     return retPosts
