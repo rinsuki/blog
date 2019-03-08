@@ -1,31 +1,35 @@
 extends ./layout
 
 block body
+    if tag
+        h1(style="margin: 0 0 24px;")
+            | タグ
+            | #{tag} が付いた記事一覧
     for post in posts
         article.panel.panel-default
             .panel-body
-                h1.title: a.title(href=post.url)= post.title
+                h1.title: a.title(href=post.path)= post.name
                 small.article-meta
                     span
                         span.glyphicon.glyphicon-time
-                        | 投稿: #{post.date.format('YYYY/MM/DD hh:mm:ss')}
+                        | 投稿: #{post.created_at}
                     if post.tags.length
                         span
                             span.glyphicon.glyphicon-tags
                             | タグ: 
-                            each tag in post.tags.map(a => a)
-                                a.article-tags(href=tag.permalink) #{tag.name}
+                            each tag in post.tags
+                                a.article-tags(href="/tags/" + tag) #{tag}
                                 span.article-tags-after
                 if post.excerpt
                     != post.excerpt
-                    p: a(href=url_for(post.link || post.path)) 続きを読む
+                    p: a(href=post.path) 続きを読む
                 else
-                    != post.content
+                    != post.body_html
     if page.total
         .pagination_wrapper
             nav
                 mixin pager_content(href, disabled, active)
-                    li(class={disabled, active}): a(href=(disabled || active) ? undefined : url_for(href))
+                    li(class={disabled, active}): a(href=(disabled || active) ? undefined : href)
                         block
                 ul.pagination
                     - var base_url = page.current_url.replace("page/"+page.current+"/", "")
