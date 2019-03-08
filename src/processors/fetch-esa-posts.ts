@@ -14,7 +14,6 @@ export type EsaPostFiltered = EsaPost & {
 function postsFilter(posts: EsaPost[]): EsaPostFiltered[] {
     var retPosts = []
     for (const post of posts) {
-        console.log(post.category)
         const r = RE_CREATED_AT.exec(post.category)
         if (r == null) continue
         const document = new jsdom.JSDOM(post.body_html).window.document
