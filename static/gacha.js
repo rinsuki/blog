@@ -1,5 +1,5 @@
 addEventListener("DOMContentLoaded", function() {
-    var base_url = document.querySelector('meta[name="base-url"]').content+"shibuyarin/2017/10-halloweencode/"
+    var base_url = "/static/shibuyarin/2017/10-halloweencode/"
     var count = 12
     function gacha() {
         var result = Math.floor(Math.random()*count)
