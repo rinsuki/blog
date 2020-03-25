@@ -1,0 +1,16 @@
+for post in (page.posts || {data: [page]}).data
+    article.width-limit
+        h1.title: a(href=url_for(post.link || post.path))= post.title
+        small
+            p 投稿: #{post.date.format("YYYY/MM/DD hh:mm:ss")}
+            if post.tags.length
+                p
+                    | タグ: 
+                    span.tags
+                        each tag in post.tags.map(a => a)
+                            span: a(href=tag.permalink)= tag.name
+        if post.excerpt
+            .content!= post.excerpt
+            a(href=url_for(post.link || post.path)) 続きを読む
+        else
+            .content!= post.content

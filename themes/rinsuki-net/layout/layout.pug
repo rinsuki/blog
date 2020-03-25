@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="initial-scale=0.75")
+        meta(name="base-url", content=url_for())
+        != css("style.css")
+        script(src="https://s.hatena.ne.jp/js/HatenaStar.js")
+        link(rel="author", href="https://rinsuki.net/")
+        link(rel="author", href="http://www.hatena.ne.jp/rinsuki/")
+        script(type="text/javascript").
+            Hatena.Star.Token = 'd083483b5ee86432a32535686363f06d989e2651';
+            Hatena.Star.SiteConfig = {
+                entryNodes: {
+                    "article": {
+                        uri: "h1 a",
+                        title: "h1",
+                        container: "h1",
+                    }
+                }
+            }
+        link(rel="alternative", type="application/atom+html", href=url_for("feed.xml"))
+        if page.title
+            title #{page.title} - #{config.title}
+        else
+            title #{config.title}
+    body
+        header
+            .width-limit
+                h1.title: a(href=url_for()) #{config.title}
+                ul.inline
+                    li: a(href=url_for("feed.xml")) RSS
+                    li: a(href="https://rinsuki.net/") rinsuki.net
+        margin
+            != body
+        .spacer-for-footer
+        footer
+            .width-limit
+                p このブログについての問い合わせ先は&nbsp;
+                    a(href="https://rinsuki.net/#contact") https://rinsuki.net/
+                    | &nbsp;の「連絡先」を参照してください。
