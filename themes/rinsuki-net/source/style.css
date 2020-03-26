@@ -13,7 +13,7 @@ body {
     flex-direction: column;
 }
 
-header, footer, article {
+header, footer, article, .pagination {
     background: #fff;
     box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
     padding: 3em 5em;
@@ -31,10 +31,15 @@ header, footer, article {
 
 article {
     margin: 2em auto;
+    line-height: 1.75;
 }
 
 h1.title {
     margin-top: 0;
+}
+.title a {
+    color: inherit;
+    text-decoration: none;
 }
 
 table, th, td {
@@ -119,6 +124,38 @@ pre > code {
     overflow-x: scroll;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 3em auto;
+    background: #eee;
+}
+.pagination ul {
+    display: inline;
+    padding: 0;
+    list-style: none;
+}
+.pagination li {
+    display: inline;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 1em 0;
+    text-align: center;
+    width: 3em;
+    background-color: #fff;
+}
+
+.pagination li:not(:first-child) a {
+    margin-left: 1px;
+}
+
 @media screen and (max-width: 40em) {
     header, footer, article {
         padding: 1em;
@@ -156,4 +193,10 @@ pre > code {
     pre > code {
         border-color: rgba(255, 255, 255, 0.6);
     }
+}
+
+/** others */
+
+.hatena-star-comment-container {
+    display: none;
 }

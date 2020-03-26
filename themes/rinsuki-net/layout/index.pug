@@ -1,16 +1,38 @@
-for post in (page.posts || {data: [page]}).data
-    article.width-limit
-        h1.title: a(href=url_for(post.link || post.path))= post.title
-        small
-            p 投稿: #{post.date.format("YYYY/MM/DD hh:mm:ss")}
-            if post.tags.length
-                p
-                    | タグ: 
-                    span.tags
-                        each tag in post.tags.map(a => a)
-                            span: a(href=tag.permalink)= tag.name
-        if post.excerpt
-            .content!= post.excerpt
-            a(href=url_for(post.link || post.path)) 続きを読む
-        else
-            .content!= post.content
+.articles
+    for post in (page.posts || {data: [page]}).data
+        article.width-limit
+            h1.title: a(href=url_for(post.link || post.path))= post.title
+            small
+                p 投稿: #{post.date.format("YYYY/MM/DD hh:mm:ss")}
+                if post.tags.length
+                    p
+                        | タグ: 
+                        span.tags
+                            each tag in post.tags.map(a => a)
+                                span: a(href=tag.permalink)= tag.name
+            if post.excerpt
+                .content!= post.excerpt
+                a(href=url_for(post.link || post.path)) 続きを読む
+            else
+                .content!= post.content
+if page.total
+    .pagination
+        nav
+            mixin pager_content(href, disabled, active)
+                li(class={disabled,active}): a(href=(disabled || active) ? undefined : url_for(href))
+                    block
+            ul
+                - var base_url = page.current_url.replace("page/" + page.current + "/", "")
+                +pager_content(base_url, page.current === 1)= "<<"
+                +pager_content(page.prev_link, page.current === 1)= "<"
+                - var n = 1
+                while n < page.current
+                    +pager_content((n == 1) ? base_url : base_url+`page/${n}/`)= n
+                    - n++
+                +pager_content(page.current_url, false, true)= page.current
+                - n++
+                while n <= page.total
+                    +pager_content((n == 1) ? base_url : base_url+`page/${n}/`)= n
+                    - n++
+                +pager_content(page.next_link, page.total === page.current)= ">"
+                +pager_content(base_url+`page/${page.total}/`, page.total === page.current)= ">>"
