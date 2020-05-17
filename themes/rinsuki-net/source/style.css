@@ -122,6 +122,7 @@ pre > code {
     padding: 0.5em;
     border: 1px solid rgba(0, 0, 0, 0.6);
     overflow-x: auto;
+    border-radius: 0;
 }
 
 main {
@@ -217,4 +218,11 @@ blockquote {
 
 .hatena-star-comment-container {
     display: none;
+}
+
+code {
+    padding: 0.1em 0.4em;
+    margin: 0 0.1em;
+    background: #eee;
+    border-radius: 4px;
 }
