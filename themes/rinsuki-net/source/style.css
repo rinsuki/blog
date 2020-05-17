@@ -117,6 +117,13 @@ img {
     max-width: 100%;
 }
 
+code {
+    padding: 0.1em 0.4em;
+    margin: 0 0.1em;
+    background: #eee;
+    border-radius: 4px;
+}
+
 pre > code {
     display: block;
     padding: 0.5em;
@@ -207,6 +214,11 @@ blockquote {
 
     pre > code {
         border-color: rgba(255, 255, 255, 0.6);
+        background: #222;
+    }
+
+    code {
+        background: #444;
     }
 
     blockquote {
@@ -218,11 +230,4 @@ blockquote {
 
 .hatena-star-comment-container {
     display: none;
-}
-
-code {
-    padding: 0.1em 0.4em;
-    margin: 0 0.1em;
-    background: #eee;
-    border-radius: 4px;
 }
