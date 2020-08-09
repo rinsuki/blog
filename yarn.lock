@@ -1240,12 +1240,13 @@ hexo-generator-feed@^1.2.2:
     nunjucks "^3.0.0"
     object-assign "^4.1.1"
 
-hexo-generator-index@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/hexo-generator-index/-/hexo-generator-index-0.2.1.tgz#9042229fcac79aaf700575da19332bf3f7ee5c5d"
+hexo-generator-index@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/hexo-generator-index/-/hexo-generator-index-2.0.0.tgz#15e71f4d28ee9d2172e2d77e8d1dba04882edc8f"
+  integrity sha512-q/29Vj9BZs0dwBcF+s9IT8ymS4aYZsDwBEYDnh96C8tsX+KPY5v6TzCdttz58BchifaJpP/l9mi6u9rZuYqA0g==
   dependencies:
-    hexo-pagination "0.0.2"
-    object-assign "^4.0.1"
+    hexo-pagination "1.0.0"
+    timsort "^0.3.0"
 
 hexo-generator-tag@^0.2.0:
   version "0.2.0"
@@ -1272,6 +1273,11 @@ hexo-pagination@0.0.2:
   resolved "https://registry.yarnpkg.com/hexo-pagination/-/hexo-pagination-0.0.2.tgz#8cf470c7db0de5b18a3926a76deb194015df7f2b"
   dependencies:
     utils-merge "^1.0.0"
+
+hexo-pagination@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hexo-pagination/-/hexo-pagination-1.0.0.tgz#c9c0ca3665267b9e9d0a89fc3edcaf3276907dc1"
+  integrity sha512-miEVFgxchPr2qNWxw0JWpJ9R/Yaf7HjHBZVjvCCcqfbsLyYtCvIfJDxcEwz1sDOC/fLzYPqNnhUI73uNxBHRSA==
 
 hexo-renderer-ejs@^0.3.0:
   version "0.3.1"
@@ -2857,6 +2863,11 @@ tildify@^1.2.0:
   resolved "https://registry.yarnpkg.com/tildify/-/tildify-1.2.0.tgz#dcec03f55dca9b7aa3e5b04f21817eb56e63588a"
   dependencies:
     os-homedir "^1.0.0"
+
+timsort@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
+  integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
 
 titlecase@^1.1.2:
   version "1.1.2"
