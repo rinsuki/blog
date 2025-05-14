@@ -29,7 +29,7 @@ jobs:
     - uses: docker/metadata-action@v5
       id: meta
       with:
-        images: ${{ secrets.DOCKER_PATH }}
+        images: ${{ secrets.DOCKER_HOST }}/${{ secrets.DOCKER_PATH }}
         tags: |
           type=ref,event=branch
           type=sha
