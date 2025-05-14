@@ -8,6 +8,6 @@ RUN yarn install --pure-lockfile
 COPY . /app/
 RUN yarn run hexo generate
 
-FROM nginx
+FROM scratch
 
-COPY --from=build /app/public /usr/share/nginx/html
+COPY --from=build /app/public /public_html
