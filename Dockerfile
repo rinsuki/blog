@@ -8,6 +8,6 @@ RUN yarn install --pure-lockfile
 COPY . /app/
 RUN yarn run hexo generate
 
-FROM scratch
+FROM busybox
 
 COPY --from=build /app/public /public_html
